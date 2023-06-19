@@ -241,7 +241,7 @@ class Continuous_MountainCarEnv(gym.Env):
 
         pygame.draw.aalines(self.surf, points=xys, closed=False, color=(0, 0, 0))
 
-        clearance = 10
+        clearance = 5
 
         l, r, t, b = -carwidth / 2, carwidth / 2, carheight, 0
         coords = []
