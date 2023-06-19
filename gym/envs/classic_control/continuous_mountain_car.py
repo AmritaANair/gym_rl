@@ -264,12 +264,12 @@ class Continuous_MountainCarEnv(gym.Env):
                 int(c[1] + clearance + self._height(pos) * scale),
             )
 
-            gfxdraw.aacircle(
-                self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
-            )
-            '''gfxdraw.filled_circle(
+            '''gfxdraw.aacircle(
                 self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
             )'''
+            gfxdraw.filled_circle(
+                self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
+            )
 
         flagx = int((self.goal_position - self.min_position) * scale)
         flagy1 = int(self._height(self.goal_position) * scale)
