@@ -227,8 +227,8 @@ class Continuous_MountainCarEnv(gym.Env):
 
         world_width = self.max_position - self.min_position
         scale = self.screen_width / world_width
-        carwidth = 40
-        carheight = 20
+        carwidth = 32.23
+        carheight = 11.5
 
         self.surf = pygame.Surface((self.screen_width, self.screen_height))
         self.surf.fill((255, 255, 255))
