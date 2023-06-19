@@ -194,7 +194,7 @@ class Continuous_MountainCarEnv(gym.Env):
             return np.array(self.state, dtype=np.float32), {}
 
     def _height(self, xs):
-        return np.sin(3 * xs) * 0.45 + 0.55
+        return np.sin(0.8 * xs) * 0.4 + 0.55
 
     def render(self, mode="human"):
         if self.render_mode is not None:
