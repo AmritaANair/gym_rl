@@ -261,20 +261,26 @@ class Continuous_MountainCarEnv(gym.Env):
             c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos))
             wheel = (
                 int(c[0] + (pos - self.min_position) * scale),
-                int(c[1] + clearance + self._height(pos) * scale),
+                #int(c[1] + clearance + self._height(pos) * scale),
             )
             '''wheel = (
                 int(c[0] + (pos - self.min_position) * scale),
                 int(c[1] + clearance + self._height(pos) * scale),
             )'''
-        
-
             gfxdraw.aacircle(
+                self.surf, wheel[0], int(carheight / 2.5), (128, 128, 128)
+            )
+            gfxdraw.filled_circle(
+                self.surf, wheel[0], int(carheight / 2.5), (128, 128, 128)
+            )
+
+
+           ''' gfxdraw.aacircle(
                 self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
             )
             gfxdraw.filled_circle(
                 self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
-            )
+            )'''
 
         flagx = int((self.goal_position - self.min_position) * scale)
         flagy1 = int(self._height(self.goal_position) * scale)
