@@ -275,7 +275,7 @@ class Continuous_MountainCarEnv(gym.Env):
             )
 
 
-           ''' gfxdraw.aacircle(
+           '''gfxdraw.aacircle(
                 self.surf, wheel[0], wheel[1], int(carheight / 2.5), (128, 128, 128)
             )
             gfxdraw.filled_circle(
