@@ -246,7 +246,7 @@ class Continuous_MountainCarEnv(gym.Env):
         l, r, t, b = -carwidth / 2, carwidth / 2, carheight, 0
         coords = []
         for c in [(l, b), (l, t), (r, t), (r, b)]:
-            c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos))
+            c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos)*0.2)
             coords.append(
                 (
                     c[0] + (pos - self.min_position) * scale,
@@ -258,7 +258,7 @@ class Continuous_MountainCarEnv(gym.Env):
         gfxdraw.filled_polygon(self.surf, coords, (0, 0, 0))
 
         for c in [(carwidth / 4, 0), (-carwidth / 4, 0)]:
-            c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos))
+            c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos)*.2)
             wheel = (
                 int(c[0] + (pos - self.min_position) * scale),
                 int(c[1] + clearance + self._height(pos) * scale),
