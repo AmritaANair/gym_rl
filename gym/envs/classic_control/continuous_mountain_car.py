@@ -228,7 +228,7 @@ class Continuous_MountainCarEnv(gym.Env):
         world_width = self.max_position - self.min_position
         scale = self.screen_width / world_width
         carwidth = 32.23
-        carheight = 11.5
+        carheight = 20
 
         self.surf = pygame.Surface((self.screen_width, self.screen_height))
         self.surf.fill((255, 255, 255))
@@ -257,7 +257,7 @@ class Continuous_MountainCarEnv(gym.Env):
         gfxdraw.aapolygon(self.surf, coords, (0, 0, 0))
         gfxdraw.filled_polygon(self.surf, coords, (0, 0, 0))
 
-        for c in [(carwidth / 4, 0), (-carwidth / 4, 0)]:
+        for c in [(carwidth / 2, 0), (-carwidth / 2, 0)]:
             c = pygame.math.Vector2(c).rotate_rad(math.cos(3 * pos))
             wheel = (
                 int(c[0] + (pos - self.min_position) * scale),
